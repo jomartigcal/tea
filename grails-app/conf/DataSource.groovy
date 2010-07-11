@@ -25,8 +25,11 @@ environments {
 	}
 	production {
 		dataSource {
+			driverClassName = "com.mysql.jdbc.Driver"
+			username = "tea_user"
+			password = "grails"				
 			dbCreate = "update"
-			url = "jdbc:hsqldb:file:prodDb;shutdown=true"
+			url = "jdbc:mysql://localhost:3306/tea_database?autoreconnect=true"
 		}
 	}
 }
