@@ -1,0 +1,14 @@
+
+#footer {
+	font-size: 0.75em;
+	font-style: italic;
+	padding: 2em 1em 2em 1em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	clear: both;
+	border-top:2px solid steelblue;
+	font-family: arial, tahoma, sans-serif;
+	font-size:100%;
+	padding-top:10px;
+	text-align:center;
+}
