@@ -26,24 +26,6 @@ class CourseTests extends GrailsUnitTestCase {
 		assertEquals "Code should not be blank", "blank", course.errors['name']
     }
 	
-	void testConstraintsMax(){
-		mockForConstraintsTests(Course)
-		
-		def course = new Course(code:"BSCS", name:"BS Computer Science", numberOfYears:6)
-		assertFalse "Should fail", course.validate()
-		assertTrue "Should have errors", course.hasErrors()
-		assertEquals "Failed min validation", "max", course.errors['numberOfYears']
-	}
-	
-	void testConstraintsMin(){
-		mockForConstraintsTests(Course)
-		
-		def course = new Course(code:"BSCS", name:"BS Computer Science", numberOfYears:0)
-		assertFalse "Should fail", course.validate()
-		assertTrue "Should have errors", course.hasErrors()
-		assertEquals "Failed min validation", "min", course.errors['numberOfYears']  	
-	}
-	
 	void testConstraintsNull() {
 		mockForConstraintsTests(Course)
 		
@@ -52,6 +34,20 @@ class CourseTests extends GrailsUnitTestCase {
 		assertTrue "Should have errors", course.hasErrors()
 		assertEquals "Code should not be null", "nullable", course.errors['code']
 		assertEquals "Code should not be null", "nullable", course.errors['name']
+	}
+	
+	void testConstraintsRange(){
+		mockForConstraintsTests(Course)
+		
+		def course = new Course(code:"BSCoE", name:"BS Computer Engineering", numberOfYears:0)
+		assertFalse "Should fail", course.validate()
+		assertTrue "Should have error", course.hasErrors()
+		assertEquals "The error should be range", "range", course.errors['numberOfYears']
+		
+		def aboveRangeYear = 10
+		course['numberOfYears'] = aboveRangeYear
+		assertEquals aboveRangeYear, course.'numberOfYears'
+		assertEquals "The error should be range", "range", course.errors['numberOfYears']
 	}
 	
 	void testConstraintsValid() {

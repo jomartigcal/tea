@@ -9,7 +9,7 @@ class Course {
     static constraints = {
 		code(blank:false, nullable:false)
 		name(blank:false, nullable:false)
-		numberOfYears(min:1, max:5)
+		numberOfYears(range:1..5)
     }
 	
 	String toString(){

@@ -22,16 +22,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>hibernate-1.2.1-grails-app-i18n</name>
-			<type>2</type>
-			<location>/home/jomartigcal/.grails/1.2.1/projects/tea/plugins/hibernate-1.2.1/grails-app/i18n</location>
-		</link>
-		<link>
-			<name>tomcat-1.2.1-src-groovy</name>
-			<type>2</type>
-			<location>/home/jomartigcal/.grails/1.2.1/projects/tea/plugins/tomcat-1.2.1/src/groovy</location>
-		</link>
-	</linkedResources>
 </projectDescription>
