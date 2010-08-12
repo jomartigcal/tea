@@ -1,3 +1,5 @@
+package com.jomartigcal.tea
+
 import grails.converters.JSON
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
